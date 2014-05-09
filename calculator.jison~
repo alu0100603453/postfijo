@@ -62,7 +62,8 @@ e
         {
           $$ = (function fact (n) { return n==0 ? 1 : fact(n-1) * n })($1);
         }
-
+    | e '==' e
+	{$$ = "<dd>" + $1 + "</dd><dd>" + $3 + "</dd><dd> == </dd>";}
     | e '%'
         {$$ = $1/100;}
     | '-' e %prec UMINUS
